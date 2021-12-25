@@ -3,8 +3,10 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.querySelector(".sum-el")
 let cardsEl = document.getElementById("cards-el")
 
-let firstCard = 10
+let firstCard = 2
 let secondCard = 7
+let cards = [firstCard, secondCard]  //array - ordered list of items
+
 
 let sum = firstCard + secondCard
 
@@ -13,9 +15,11 @@ let isAlive = true
 
 let message = ""
 
-
 function startGame() {
-    cardsEl.textContent = "Cards: " + firstCard + ", " + secondCard
+    renderGame()
+}
+function renderGame() {
+    cardsEl.textContent = "Cards: " + cards[0] + ", " + cards[1]
     sumEl.textContent = "Sum: " + sum
     if (sum < 21) {
         message = "Do you want to draw a new card?"
@@ -31,5 +35,7 @@ function startGame() {
 }
 
 function newCard() {
-    textContent = 'Drawing a new card'
+    let card = 5
+    sum += card
+    renderGame()
 }
