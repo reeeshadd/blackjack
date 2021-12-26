@@ -14,12 +14,10 @@ let isAlive = false
 let message = ""
 
 let player = {    //object
-    name: "Reshad",
-    chips: 145
+    name: "You have",
+    chips: 100
 }
 
-
-// playerEl.textContent = player.name + ": $" + player.chips
 
 function startGame() {
     isAlive = true
@@ -28,11 +26,14 @@ function startGame() {
     let secondCard = getRandomCard()
     cards = [firstCard, secondCard]
     sum = firstCard + secondCard
-    renderGame()
+    if (player.chips != 0 && player.chips > 0) {
+        renderGame()
+    } else {
+        alert("You are out of game!")
+    }
 }
 function renderGame() {
     cardsEl.textContent = "Cards: "
-    
     sumEl.textContent = "Sum: " + sum
     if (sum < 21) {
         message = "Do you want to draw a new card?"
@@ -40,14 +41,16 @@ function renderGame() {
         message = "You've got Blackjack!"
         hasBlackJack = true
         isAlive = false
+        player.chips += 20
     } else {
         message = "You're out of the game!"
         isAlive = false
+        player.chips -= 20
     }
     for (i=0;i<cards.length;i++) {
         cardsEl.textContent += cards[i] + ", "
     }
-    
+    playerEl.textContent = player.name + ": $" + player.chips
     messageEl.textContent = message
 }
 
