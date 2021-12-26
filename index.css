@@ -32,7 +32,7 @@ button {
     transition: 0.4s;
 }
 button:hover {
-    background-color: rgb(214, 158, 16)
+    background-color: rgb(214, 182, 100)
   }
 
 /* Style the buttons that are used to open and close the accordion panel */
@@ -40,17 +40,21 @@ button:hover {
     /* background-color: #016f32; */
     color: #016f32;
     cursor: pointer;
-    padding: 10px;
     width: 50%;
     text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border: none;
+    border-radius: 2px;
+    margin-bottom: 2px;
+    margin-top: 2px;
     outline: none;
     transition: 0.4s;
   }
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .accordion:hover {
-    background-color: rgb(214, 158, 16)
+    background-color: rgb(214, 182, 100)
   }
   
   /* Style the accordion panel. Note: hidden by default */
@@ -71,7 +75,7 @@ button:hover {
     /* margin-top: 10px; */
     /* margin-top: 0;
     align-self: flex-end; */
-    position: fixed;
+    /* position: fixed; */
     left: 0;
     bottom: 0;
     width: 100%;
