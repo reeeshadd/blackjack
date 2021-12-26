@@ -32,6 +32,7 @@ function startGame() {
     } else {
         message = "You're out of the game!"
         messageEl.textContent = message
+        sum = 0
         endGame.style.display = "block"
         alert("You are out of the game!")
     }
