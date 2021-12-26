@@ -3,6 +3,7 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.querySelector(".sum-el")
 let cardsEl = document.getElementById("cards-el")
 let playerEl = document.getElementById("player-el")
+let endGame = document.getElementById("endGame")
 
 let cards = []  //array - ordered list of items
 
@@ -31,6 +32,7 @@ function startGame() {
     } else {
         message = "You're out of the game!"
         messageEl.textContent = message
+        endGame.style.display = "block"
         alert("You are out of the game!")
     }
 }
@@ -59,7 +61,7 @@ function renderGame() {
 }
 
 function newCard() {
-    if (isAlive && hasBlackJack === false) {
+    if (player.chips != 0 && player.chips > 0) {
         let card = getRandomCard()
         sum += card
         cards.push(card)
@@ -97,4 +99,16 @@ for (i = 0; i < acc.length; i++) {
       panel.style.display = "block";
     }
   });
+}
+
+function newGame() {
+    isAlive = true
+    hasBlackJack = false
+    let firstCard = getRandomCard()
+    let secondCard = getRandomCard()
+    cards = [firstCard, secondCard]
+    sum = firstCard + secondCard
+    player.chips += 100
+    endGame.style.display = "none"
+    renderGame()
 }
