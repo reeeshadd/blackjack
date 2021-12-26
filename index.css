@@ -83,7 +83,7 @@ button:active {
   /* Style the accordion panel. Note: hidden by default */
   .panel {
     padding: 0 18px;
-    background-color: #016f32;
+    /* background-color: #016f32; */
     display: none;
     overflow: hidden;
   }
