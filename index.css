@@ -1,3 +1,5 @@
+
+
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
     background-image: url("table.png");
@@ -26,14 +28,20 @@ button {
     padding-bottom: 5px;
     font-weight: bold;
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
     margin-bottom: 2px;
     margin-top: 2px;
     transition: 0.4s;
+    transition-duration: 0.4s;
 }
 button:hover {
     background-color: rgb(214, 182, 100)
   }
+button:active {
+  animation: press 0.3s 1 linear;
+  
+}
+
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
@@ -50,12 +58,27 @@ button:hover {
     margin-top: 2px;
     outline: none;
     transition: 0.4s;
+    
   }
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .accordion:hover {
     background-color: rgb(214, 182, 100)
   }
+ 
+
+  @keyframes press {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.92);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
   
   /* Style the accordion panel. Note: hidden by default */
   .panel {
@@ -75,7 +98,7 @@ button:hover {
     /* margin-top: 10px; */
     /* margin-top: 0;
     align-self: flex-end; */
-    /* position: fixed; */
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -84,3 +107,4 @@ button:hover {
 .container__main {
     flex-grow: 1;
 }
+
