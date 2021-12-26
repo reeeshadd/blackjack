@@ -68,7 +68,7 @@ function newCard() {
         renderGame()
     } else if (player.chip === 0 ) {
         endGame.style.display = "block"
-    } else if (sum > 21 || player.chip < 0) {
+    } else if (sum > 21 || player.chip === 0) {
         return
     }
 }
