@@ -6,7 +6,6 @@ let playerEl = document.getElementById("player-el")
 
 let cards = []  //array - ordered list of items
 
-
 let sum = 0
 
 let hasBlackJack = false
@@ -14,13 +13,13 @@ let isAlive = false
 
 let message = ""
 
-let player = {
+let player = {    //object
     name: "Reshad",
     chips: 145
 }
 
 
-playerEl.textContent = player.name + ": $" + player.chips
+// playerEl.textContent = player.name + ": $" + player.chips
 
 function startGame() {
     isAlive = true
@@ -58,8 +57,6 @@ function newCard() {
         sum += card
         cards.push(card)
         renderGame()
-    }else{
-
     }
 }
 
