@@ -61,11 +61,15 @@ function renderGame() {
 }
 
 function newCard() {
-    if (player.chips != 0 && player.chips > 0) {
+    if (isAlive === true && sum < 21 && player.chip != 0) {
         let card = getRandomCard()
         sum += card
         cards.push(card)
         renderGame()
+    } else if (player.chip === 0 ) {
+        endGame.style.display = "block"
+    } else if (sum > 21 || player.chip < 0) {
+        return
     }
 }
 
