@@ -8,6 +8,7 @@ let endGame = document.getElementById("endGame")
 let cards = []  //array - ordered list of items
 
 let sum = 0
+let isGame = false
 
 let hasBlackJack = false
 let isAlive = false
@@ -23,6 +24,7 @@ let player = {    //object
 function startGame() {
     isAlive = true
     hasBlackJack = false
+    isGame = true
     let firstCard = getRandomCard()
     let secondCard = getRandomCard()
     cards = [firstCard, secondCard]
@@ -32,7 +34,7 @@ function startGame() {
     } else {
         message = "You're out of the game!"
         messageEl.textContent = message
-        sum = 0
+        isGame = false
         endGame.style.display = "block"
         alert("You are out of the game!")
     }
@@ -62,14 +64,14 @@ function renderGame() {
 }
 
 function newCard() {
-    if (isAlive === true && sum < 21 && player.chip != 0) {
+    if (isAlive === true && sum < 21 && player.chip != 0 && isGame === true) {
         let card = getRandomCard()
         sum += card
         cards.push(card)
         renderGame()
-    } else if (player.chip === 0 ) {
-        endGame.style.display = "block"
     } else if (sum > 21 || player.chip === 0) {
+        return
+    } else if (sum = 0) {
         return
     }
 }
@@ -107,13 +109,11 @@ for (i = 0; i < acc.length; i++) {
 }
 
 function newGame() {
-    isAlive = true
-    hasBlackJack = false
-    let firstCard = getRandomCard()
-    let secondCard = getRandomCard()
-    cards = [firstCard, secondCard]
-    sum = firstCard + secondCard
     player.chips += 100
     endGame.style.display = "none"
-    renderGame()
+    playerEl.textContent = player.name + ": $" + player.chips
+    cardsEl.textContent = "Cards: "
+    sumEl.textContent = "Sum: "
+    message = "New game started!"
+    messageEl.textContent = message
 }
