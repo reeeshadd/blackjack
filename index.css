@@ -38,7 +38,7 @@ button:hover {
     background-color: rgb(214, 182, 100)
   }
 button:active {
-  animation: press 0.3s 1 linear;
+  animation: press 0.2s 1 linear;
   
 }
 
