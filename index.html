@@ -8,13 +8,26 @@
         <title>Blackjack Game</title>
     </head>
     <body>
-        <h1>Blackjack</h1>
-        <p id="message-el">Want to play a round?</p>
-        <p id="cards-el" onclick="newCard()">Cards: </p>
-        <p class="sum-el">Sum: </p>
-        <button onclick="startGame()">START GAME</button>
-        <button onclick="newCard()">NEW CARD</button>
-        <p id="player-el"></p>
+        <div class="container">
+            <header class="container__header">
+            <h1>Blackjack</h1>
+            </header>
+            <main class="container__main">
+            <p id="message-el">Want to play a round?</p>
+            <p id="cards-el" onclick="newCard()">Cards: </p>
+            <p class="sum-el">Sum: </p>
+            <button onclick="startGame()">START GAME</button>
+            <button onclick="newCard()">NEW CARD</button>
+            <p id="player-el"></p>
+            </main>
+            <footer class="container__footer">
+                <button class="accordion">How to play Blackjack?</button>
+                <div class="panel">
+                <p>You are given 2 cards at the beginning of the game. Your goal is to get 21 points. If the sum of your cards is less than 21, you can draw a new card. If your point exceeds 21, you are out of the game.
+                </p>
+                </div>
+            </footer>
+        </div>
         <script src="index.js"></script>
     </body>
 </html>
