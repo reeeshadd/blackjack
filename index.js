@@ -29,7 +29,7 @@ function startGame() {
     if (player.chips != 0 && player.chips > 0) {
         renderGame()
     } else {
-        message = "You're out of the game!'"
+        message = "You're out of the game!"
         messageEl.textContent = message
         alert("You are out of the game!")
     }
