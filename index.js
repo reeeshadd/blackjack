@@ -29,7 +29,9 @@ function startGame() {
     if (player.chips != 0 && player.chips > 0) {
         renderGame()
     } else {
-        alert("You are out of game!")
+        message = "You're out of the game!'"
+        messageEl.textContent = message
+        alert("You are out of the game!")
     }
 }
 function renderGame() {
@@ -42,10 +44,12 @@ function renderGame() {
         hasBlackJack = true
         isAlive = false
         player.chips += 20
-    } else {
-        message = "You're out of the game!"
+    } else if (sum > 21){
+        message = "You Lost this round! Try again."
         isAlive = false
         player.chips -= 20
+    } else if (player.chips === 0){
+        message = "You're out of the game!'"
     }
     for (i=0;i<cards.length;i++) {
         cardsEl.textContent += cards[i] + ", "
